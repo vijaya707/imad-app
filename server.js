@@ -21,7 +21,20 @@ var htmlTemplate = `<html>
 <head>
 <title>${title} </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="stylesheets" type="text/css" href="ui/style.css"/>
+       <style>
+       .container {
+    max-width: 80px;
+    margin: 0 auto;
+    color: #9ef3dc;
+    font-family: Sans-Serif;
+    padding-top: 16px;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:#123bac;
+}
+
+       </style>
     </head>
     
     <body>
