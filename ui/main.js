@@ -7,10 +7,10 @@ var imgelement = document.getElementById('img-id');
 var marginLeft = 10;
 function moveRight()
 {
-    marginLeft = marginLeft+10;
+    marginLeft = marginLeft+5;
     imgelement.style.marginLeft = marginLeft+ 'px';
 }
 imgelement.onclick = function() {
-    var interval = setInterval(moveRight,100);
+    var interval = setInterval(moveRight,50);
    
 };
