@@ -22,8 +22,12 @@ body {
 
 .block-nav
 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
     float : left;
     display : block;
     text-decoration:none;
-    overflow : hidden;
 }
