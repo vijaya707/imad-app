@@ -30,4 +30,6 @@ body {
     float : left;
     display : block;
     text-decoration:none;
+    color: white;
+    text-align: center;
 }
