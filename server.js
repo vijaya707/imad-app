@@ -72,9 +72,10 @@ app.get('/:articleName', function (req, res) {
   res.send(createTemplate(pageContents[articleName]));
 });
 
-app.get('/vjaxpage2', function (req, res) {
+app.get('/:articleName', function (req, res) {
     
-  res.sendFile(path.join(__dirname,'ui','vjaxpage2.html'));
+  var articleName = req.param.articleName;      
+  res.send(createTemplate(pageContents[articleName]));
 });
 
 
