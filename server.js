@@ -5,18 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/vjaxpage1',function(req,res){
-    res.send("Vjax page 1 has been accessed");
-});
-
-app.get('/vjaxpage2',function(req,res){
-    res.send("Vjax page 2 has been accessed");
-});
-
-app.get('/vjaxpage3',function(req,res){
-    res.send("Vjax page 3 has been accessed");
-});
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
