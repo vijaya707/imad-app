@@ -31,7 +31,7 @@ var htmlTemplate = `<html>
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
-    background-color:#123bac;
+    
 }
 
        </style>
