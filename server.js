@@ -5,19 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var pageContents = {
-    'page1Con' :{ title : 'Vjax Page 1 Article',
+
+
+var articles = {
+    'articleOne' :{
+  title : 'Vjax Page 1 Article',
   heading : 'Watch Dogs 2',
   date : '8th August, 2017',
-  content :'<p>Watch Dogs 2  is an action-adventure video game developed by Ubisoft Montreal and published by Ubisoft. It is the sequel to 2014 Watch Dogs and was released worldwide for PlayStation 4, Xbox One and Microsoft Windows in November 2016.</p>'},
-    
-    'page2Con' : { title : 'Vjax Page 2 Article',
+  content :'<p>Watch Dogs 2  is an action-adventure video game developed by Ubisoft Montreal and published by Ubisoft. It is the sequel to 2014 Watch Dogs and was released worldwide for PlayStation 4, Xbox One and Microsoft Windows in November 2016.</p>'
+},
+    'articleTwo' : {
+         title : 'Vjax Page 2 Article',
   heading : 'Watch Dogs 2',
   date : '9th August, 2017',
-  content :'<p>Watch Dogs 2  is an action-adventure video game developed by Ubisoft Montreal and published by Ubisoft. It is the sequel to 2014 Watch Dogs and was released worldwide for PlayStation 4, Xbox One and Microsoft Windows in November 2016.</p>'},
-};
+  content :'<p>Watch Dogs 2  is an action-adventure video game developed by Ubisoft Montreal and published by Ubisoft. It is the sequel to 2014 Watch Dogs and was released worldwide for PlayStation 4, Xbox One and Microsoft Windows in November 2016.</p>'
 
-
+    }
+        
+    };
 function createTemplate(data) {
     var date = data.date;
     var content = data.content;
@@ -68,14 +73,8 @@ return htmlTemplate;
 }
 
 app.get('/:articleName', function (req, res) {
-  var articleName = req.param.articleName;      
-  res.send(createTemplate(pageContents[articleName]));
-});
-
-app.get('/:articleName', function (req, res) {
-    
-  var articleName = req.param.articleName;      
-  res.send(createTemplate(pageContents[articleName]));
+  var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 
