@@ -10,7 +10,7 @@ app.get('/vjaxpage1', function (req, res) {
 });
 
 app.get('/vjaxpage2', function (req, res) {
-  res.send("Vjax Page2 request has been served ");
+  res.sendFile(path.join(__dirname,'ui','vjaxpage2.html'));
 });
 
 
