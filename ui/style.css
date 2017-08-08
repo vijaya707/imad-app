@@ -20,3 +20,10 @@ body {
     height: 200px;
 }
 
+.block-nav
+{
+    float : left;
+    display : block;
+    text-decoration:none;
+    overflow : hidden;
+}
