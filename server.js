@@ -9,8 +9,59 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var article = {
+    title : 'Article one',
+    date : '18th August, 2017',
+    heading:'REST - Representational State Transfer',
+    content :`<p>Representational state transfer (REST) or RESTful web services is a way of providing interoperability between computer systems on the Internet. REST-compliant Web services allow requesting systems to access and manipulate textual representations of Web resources using a uniform and predefined set of stateless operations. Other forms of Web service exist, which expose their own arbitrary sets of operations such as WSDL and SOAP.</p>
+
+        <p>"Web resources" were first defined on the World Wide Web as documents or files identified by their URLs, but today they have a much more generic and abstract definition encompassing every thing or entity that can be identified, named, addressed or handled, in any way whatsoever, on the Web. In a RESTful Web service, requests made to a resource's URI will elicit a response that may be in XML, HTML, JSON or some other defined format. The response may confirm that some alteration has been made to the stored resource, and it may provide hypertext links to other related resources or collections of resources. Using HTTP, as is most common, the kind of operations available include those predefined by the HTTP verbs GET, POST, PUT, DELETE and so on.</p>
+
+        <p>By using a stateless protocol and standard operations, REST systems aim for fast performance, reliability, and the ability to grow, by re-using components that can be managed and updated without affecting the system as a whole, even while it is running. </p>`
+};
+
+function createTemplate(data)
+{
+    var date = data.date;
+    var title = data.title;
+    var content = data.content;
+    var heading = data.heading;
+    
+var htmltemplate = `
+<html>
+  <head>
+    <title>${title}</title>
+    <link href="/ui/style.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+    
+    <div><a href="/">Home</a> </div>
+    <hr/>
+   
+    <div> 
+    
+    <h1>${heading} </h1>
+    </div>
+   
+    <div>
+      ${date}
+    </div>
+   
+    <div>
+        ${content}
+        </div>
+    </div>
+  </body>
+  
+</html>
+`;
+
+return htmltemplate;
+}
 app.get('/article_one',function (req,res){
-   res.sendFile(path.join(__dirname,'ui','article_one.html')) ;
+   res.send(createTemplate(article)) ;
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
