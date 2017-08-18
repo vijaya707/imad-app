@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 var articles = {
- articleOne : {
+ 'article-one' : {
     title : 'Article one',
     date : '18th August, 2017',
     heading:'REST - Representational State Transfer Article 1',
@@ -20,7 +20,7 @@ var articles = {
 
         <p>By using a stateless protocol and standard operations, REST systems aim for fast performance, reliability, and the ability to grow, by re-using components that can be managed and updated without affecting the system as a whole, even while it is running. </p>`
 },
- articleTwo : {
+ 'article-two' : {
       title : 'Article Two',
     date : '21th August, 2017',
     heading:'REST - Representational State Transfer Article 2',
@@ -72,8 +72,10 @@ var htmltemplate = `
 
 return htmltemplate;
 }
-app.get('/article_one',function (req,res){
-   res.send(createTemplate(article)) ;
+
+app.get('/:articleName',function (req,res){
+    var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articleName])) ;
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
