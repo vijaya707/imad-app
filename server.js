@@ -29,7 +29,7 @@ function hash(input,salt)
 
 }
 
-apt.get('/hash/:input',function (req,res){
+app.get('/hash/:input',function (req,res){
     var hashString = hash(req.params.input,'this-is-vijaya');
     
     res.send(hashString);
