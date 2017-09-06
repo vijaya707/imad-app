@@ -12,11 +12,11 @@ submit.onclick = function () {
             alert('Logged in successfully');
               
           }//if
-          if(request.status === 403)
+          else (request.status === 403)
           {
               alert('Invalid password/username');
           }
-          if(request.status === 500)
+          else (request.status === 500)
           {
               alert('Something went wrong');
           }
@@ -29,6 +29,6 @@ submit.onclick = function () {
     console.log(password);
     request.open('POST','http://u707viee.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.strinfigy({username:username,password:password}));
+    request.send(JSON.stringify({username: username,password: password}));
 };
 
