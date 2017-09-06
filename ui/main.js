@@ -12,11 +12,11 @@ submit.onclick = function () {
             alert('Logged in successfully');
               
           }//if
-          else (request.status === 403)
+          else if (request.status === 403)
           {
               alert('Invalid password/username');
           }
-          else (request.status === 500)
+          else if (request.status === 500)
           {
               alert('Something went wrong');
           }
