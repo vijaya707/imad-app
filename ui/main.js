@@ -23,12 +23,12 @@ submit.onclick = function () {
       }//if
     };
     
-    var user = document.getElementById('username').value;
-    var pass = document.getElementById('password').value;
-    console.log(username);
-    console.log(password);
+    var user = document.getElementById('uid').value;
+    var pass = document.getElementById('pid').value;
+    console.log(uid);
+    console.log(pid);
     request.open('POST','http://u707viee.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.stringify({username: username,password: password}));
+    request.send(JSON.stringify({username: uid,password: pid}));
 };
 
