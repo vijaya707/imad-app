@@ -29,6 +29,6 @@ submit.onclick = function () {
     console.log(pid);
     request.open('POST','http://u707viee.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.stringify({username: uid,password: pid}));
+    request.send(JSON.stringify({username: user,password: pass}));
 };
 
